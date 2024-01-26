@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather Application</title>
+    <!-- tailwind script -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      * {
+        font-family: "Poppins", sans-serif;
+        box-sizing: border-box;
+      }
+    </style>
+    <!-- Javascript's -->
+    <script defer src="./app.js"></script>
+  </head>
+  <body>
+    <div class="w-full h-[100vh] bg-[#222] flex justify-center items-center">
+      <!-- weather card container -->
+      <div
+        class="w-[90%] max-w-[480px] h-auto bg-gradient-to-br from-teal-400 to-indigo-600 text-white rounded-2xl px-9 py-10 text-center" 
+      >
+
+      <!-- search-bar -->
+        <div class="w-full flex justify-between items-center">
+          <input id="search-box" type="text" placeholder="enter city name" spellcheck="false" 
+          class="border-0 outline-0 bg-[#ebfffc] text-[#555] h-14 rounded-3xl flex-1 mr-4 text-lg px-6 py-2"
+          />
+          <button id="search-btn"
+          class="border-0 outline-0 bg-[#ebfffc] rounded-full w-14 h-14 cursor-pointer hover:bg-blue-200"
+          >
+            <img
+            class="w-4 ml-5" 
+            src="./images/search.png" alt="search-icon" />
+          </button>
+        </div>
+
+        <!-- error handling -->
+        <div>
+            <h2 id="error" class="text-2xl mt-5 hidden">Invalid city name!</h2>
+        </div>
+
+
+        <!-- weather card-->
+        <div id="weather" class="hidden">
+            <!-- weather img & temperature -->
+            <div class="flex flex-col items-center">
+                <img id="weather-icon" src="./images/rain.png" alt="weather-img"
+                class="w-44 mt-8"
+                >
+                <h1 class="text-7xl font-medium mt-2">
+                    <span id="temp">22</span>°c
+                </h1>
+                <h2 id="city"
+                class="text-[40px] font-normal mt-[-10px]">
+                New York</h2>
+            </div>
+    
+            <!-- weather details info -->
+            <div class="flex justify-between items-center px-5 mt-12">
+                <div class="flex items-center text-left">
+                    <img src="./images/humidity.png" alt="humidity-icon" class="w-10 mr-3">
+                    <div class="text-[22px] mt-[-6px]">
+                        <p>
+                            <span id="humidity">50</span>%
+                        </p>
+                        <p>Humidity</p>
+                    </div>
+                </div>
+                <div class="flex items-center text-left">
+                    <img src="./images/wind.png" alt="wind-icon" class="w-10 mr-3">
+                    <div class="text-[22px] mt-[-6px]">
+                        <p>
+                            <span id="wind">15</span>km/h
+                        </p>
+                        <p>Wind Speed</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
